@@ -1,1 +1,5 @@
-
+Project description:
+This project implements a DC-DC Boost Converter designed to step up a 5V input supply to a regulated 12V output, primarily intended to drive loads such as a DC fan. The design integrates power electronics and embedded control, where the switching operation is driven by PWM signals from an ESP32 microcontroller.
+The core of the circuit is based on a boost converter topology, consisting of an inductor, switching MOSFET, diode, and output capacitor. A gate driver IC (TC4427A) is used to efficiently drive the MOSFET, ensuring fast switching and reducing transition losses. The PWM signal from the ESP32 is fed into the gate driver, which amplifies the signal to provide sufficient current for driving the MOSFET gate.
+During operation, when the MOSFET is switched ON, energy is stored in the inductor. When the MOSFET is switched OFF, the stored energy is released through the diode to the output capacitor, resulting in a boosted output voltage higher than the input. The output capacitor smooths the voltage, providing a stable DC output suitable for powering a 12V fan.
+The switching frequency and duty cycle of the PWM signal control the output voltage, allowing dynamic adjustment of the boost level. This makes the system flexible for different load conditions and demonstrates real-time control of power conversion using a microcontroller.
